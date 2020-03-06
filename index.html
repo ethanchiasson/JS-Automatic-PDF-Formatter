@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="heading">
+      <h1 style="text-align: center; color: white;">
+        Defendant Application .PDF Auto-Formatter
+      </h1>
+    </div>
+    <div class="container">
+      <div class="uploadLabel">
+        <label for="myfile" style="text-align:center; font-size: 1.25em;"
+          >Select Defendant Application Files...
+        </label>
+        <br />
+        <input type="file" id="myfiles" name="myfiles" multiple />
+      </div>
+      <div class="list">
+        <ul id="uList"></ul>
+      </div>
+    </div>
+    <script>
+      document.getElementById("myfiles").onchange = function(e) {
+        var fileList = [];
+        for (var i = 0; i < e.target.files.length; i++) {
+          fileList.push(e.target.files[i].name);
+        }
+
+        const formatedArray = fileList.map(x => {
+          return x.replace(".pdf", "");
+        });
+
+        const formatedArray2 = formatedArray.map(x => {
+          return x.replace(",", "");
+        });
+
+        ul = document.createElement("ul");
+
+        document.getElementById("uList").appendChild(ul);
+
+        formatedArray2.forEach(function(item) {
+          let li = document.createElement("li");
+          ul.appendChild(li);
+
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.value = 1;
+          checkbox.name = "todo[]";
+
+          li.appendChild(checkbox);
+
+          li.innerHTML += item;
+        });
+
+        console.log(fileList);
+        console.log(formatedArray);
+        console.log(formatedArray2);
+      };
+    </script>
+  </body>
+</html>

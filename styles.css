@@ -1,0 +1,48 @@
+body {
+  background-color: #091a28;
+  font-family: monospace;
+}
+.container {
+  background-color: #112d43;
+  max-width: 450px;
+  height: auto;
+  padding: 20px;
+  margin: auto;
+  margin-top: 40px;
+  color: white;
+  border-radius: 10px;
+}
+
+.list {
+  margin: auto;
+  margin-top: 40px;
+  color: white;
+}
+
+ul {
+  list-style: none;
+  font-size: 1.2em;
+}
+
+li {
+  margin: auto;
+}
+
+label {
+  text-align: center;
+  margin: auto;
+}
+
+.uploadLabel {
+  text-align: center;
+}
+
+#myfiles {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.heading {
+  margin: auto;
+  margin-top: 40px;
+}
